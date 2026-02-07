@@ -345,7 +345,7 @@
         // ✅ Tweak how hard NO is to click
         const EVADE_DISTANCE = 70;
         const EDGE_PADDING = 18;
-        const MOVE_MS = 140;
+        const MOVE_MS = 80;
 
         let evasionStarted = false;
         let canMove = true;
@@ -384,7 +384,7 @@ noBtn.addEventListener("mouseenter", () => {
     if (!canMove) return;
 
     // Only evade for first 2 attempts
-    if (noClickCount < 5) {
+    if (noClickCount < 6) {
 
         canMove = false;   // lock movement temporarily
 
@@ -394,7 +394,7 @@ noBtn.addEventListener("mouseenter", () => {
         // unlock after delay (slow down movement)
         setTimeout(() => {
             canMove = true;
-        }, 140);   // increase = slower escapes
+        }, 90);   // increase = slower escapes
     }
 });
 
@@ -534,4 +534,5 @@ noBtn.addEventListener("click", (e) => {
 </body>
 
 </html>
+
 
