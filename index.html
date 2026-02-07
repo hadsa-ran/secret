@@ -391,7 +391,7 @@ noBtn.addEventListener("mouseenter", () => {
     if (!canMove) return;
 
     
-    if (noClickCount < 6) {
+    if (noClickCount < 5) {
 
         canMove = false;   // lock movement temporarily
 
@@ -412,7 +412,7 @@ noBtn.addEventListener("click", (e) => {
     noClickCount++;
 
     // First two clicks escape
-    if (noClickCount <= 5) {
+    if (noClickCount <= 4) {
         moveNoRandom(true);
         setFunnyNoText();
         return;
@@ -538,6 +538,7 @@ noBtn.addEventListener("click", (e) => {
 </body>
 
 </html>
+
 
 
 
