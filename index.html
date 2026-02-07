@@ -14,18 +14,18 @@
     <meta property="og:type" content="website" />
 
 
-    <!-- ✅ Only font change (Poppins like the screenshot theme) -->
+    <!-- Only font change  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* ✅ same vibe as the screenshot: soft pink background */
+            /* soft pink background */
             --pink1: #fde2ea;
             --pink2: #fbe7ef;
 
-            /* ✅ font colors like screenshot */
+            /* font colors*/
             --ink: #7a1f3d;      /* main text */
             --muted: #b44a6f;    /* sub text */
 
@@ -129,7 +129,7 @@
 
         .name {
             font-weight: 800;
-            color: #d6336c; /* ✅ cute highlight */
+            color: #d6336c; /* cute highlight */
         }
 
         .row {
@@ -316,7 +316,7 @@
             <p class="sub">Choose wisely. (Be aware of the “No” button...(Just sayin...)</p>
 
             <div class="row" id="playground">
-                <!-- ✅ DO NOT change yes-slot / no-slot structure -->
+                <!-- DO NOT change yes-slot / no-slot structure(ts is imp) -->
                 <div class="yes-slot" id="yesSlot">
                     <button class="yes" id="yesBtn">YES</button>
                 </div>
@@ -349,7 +349,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const TO_Name = urlParams.get('valentineName');
         const FROM_Name = urlParams.get('name');
-        // ✅ Tweak how hard NO is to click
+        // Tweak how hard NO is to click(i'd prefer 80-100)
         const EVADE_DISTANCE = 70;
         const EDGE_PADDING = 18;
         const MOVE_MS = 80;
@@ -387,10 +387,10 @@
 
 noBtn.addEventListener("mouseenter", () => {
 
-    // cooldown check (prevents rapid movement)
+    
     if (!canMove) return;
 
-    // Only evade for first 2 attempts
+    
     if (noClickCount < 6) {
 
         canMove = false;   // lock movement temporarily
@@ -411,14 +411,14 @@ noBtn.addEventListener("click", (e) => {
 
     noClickCount++;
 
-    // First two clicks → escape
+    // First two clicks escape
     if (noClickCount <= 5) {
         moveNoRandom(true);
         setFunnyNoText();
         return;
     }
 
-    // Third click → turns into YES 😈
+    // Third click turns into YES
     noBtn.textContent = "Nvmd! It's a YES! 💘";
 
     setTimeout(() => {
@@ -437,18 +437,15 @@ noBtn.addEventListener("click", (e) => {
         });
 
         const funnyNoTexts = [
-    "Wait wait wait 😭",
-    "That wasn't the right button...",
-    "Are you sure about that?? 👀",
-    "My heart just skipped 😳",
-    "Try again... maybe YES this time?",
-    "I refuse to accept this outcome 😤",
-    "You almost hurt my feelings 🥺",
-    "Hmm... suspicious choice 🤨",
-    "Error 404: NO not allowed 😈",
-    "Plot twist incoming...",
-    "The YES button looks nicer tho 👀",
-    "You sure you clicked correctly? 😂"
+    "Wait wait wait 😭, tYou dont want to? no?",
+    "That wasn't the right button...This is the no button, darling~",
+    "Are you sure about that??",
+    "Try again... maybe YES this time?..No dont click this nooo",
+    "I refuse to accept this outcome 😤,Dont click this again!!",
+    "You almost hurt my feelings 🥺, meanie! Still No?",
+    "Hmm... suspicious choice...Are you sure youre no?",
+    "Error 404: NO not allowed , dont click this again!!",
+    "The YES button looks nicer tho 👀, Still No?"
 ];
 
         let lastNoTextIndex = -1;
@@ -541,6 +538,7 @@ noBtn.addEventListener("click", (e) => {
 </body>
 
 </html>
+
 
 
 
